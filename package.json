@@ -1,0 +1,8 @@
+{
+  "name": "driveflow-test-drive-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fictional market-adaptive test drive form prototype with Playwright QA tests",
+  "scripts": { "start": "python3 -m http.server 4173", "test": "playwright test" },
+  "devDependencies": { "@playwright/test": "^1.52.0" }
+}

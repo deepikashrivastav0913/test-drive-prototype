@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Fictional automotive test drive booking prototype." />
+  <title>DriveFlow | Book a test drive</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="DriveFlow home"><span class="brand-mark">D</span><span>driveflow<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Main navigation"><a href="#models">Explore models</a><a href="#how-it-works">How it works</a><button class="market-button" id="marketToggle" type="button">Market: <span id="marketName">India</span> <span aria-hidden="true">⌄</span></button></nav>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT DRIVE STARTS HERE</p><h1>Feel the road.<br><em>Find your drive.</em></h1><p class="hero-description">Choose your favourite model and book a test drive with a local experience partner. No pressure, just the drive.</p><div class="hero-points"><span><span class="check">✓</span> Your preferred time</span><span><span class="check">✓</span> Local dealerships</span></div></div>
+      <div class="hero-art" aria-label="Illustration of a modern electric car" role="img"><div class="sun"></div><div class="art-label">MADE FOR THE MOMENT <span>01 / 03</span></div><svg class="car" viewBox="0 0 640 260" role="img" aria-label="Stylized blue car illustration"><defs><linearGradient id="body" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#8bc8f7"/><stop offset="1" stop-color="#2479c7"/></linearGradient></defs><ellipse cx="330" cy="218" rx="245" ry="18" fill="#1c3650" opacity=".14"/><path d="M83 165 L112 126 Q127 111 164 105 L240 64 Q258 55 288 55 L384 61 Q410 63 431 87 L483 130 L532 143 Q553 150 553 174 L548 195 L92 195 Q72 190 83 165Z" fill="url(#body)"/><path d="M171 105 L247 70 Q260 65 285 66 L325 69 L325 109Z" fill="#d8efff"/><path d="M340 70 L381 73 Q400 76 416 95 L437 110 L340 109Z" fill="#c4e7ff"/><path d="M115 131 L492 131" stroke="#fff" stroke-opacity=".6" stroke-width="3"/><path d="M340 117 L340 178" stroke="#195e9f" stroke-width="2"/><path d="M444 143 L514 155" stroke="#fff" stroke-width="7" stroke-linecap="round"/><rect x="88" y="157" width="48" height="18" rx="7" fill="#f7fbff"/><circle cx="184" cy="192" r="38" fill="#182b3c"/><circle cx="184" cy="192" r="22" fill="#dce8ef"/><circle cx="184" cy="192" r="9" fill="#7c96a8"/><circle cx="458" cy="192" r="38" fill="#182b3c"/><circle cx="458" cy="192" r="22" fill="#dce8ef"/><circle cx="458" cy="192" r="9" fill="#7c96a8"/><path d="M109 181 L537 181" stroke="#175c99" stroke-width="3" opacity=".5"/></svg><div class="art-caption"><strong>Make it yours.</strong><span>One drive can change everything.</span></div></div>
+    </section>
+    <section class="booking-section" id="models">
+      <div class="section-intro"><p class="eyebrow">LET'S GET YOU BEHIND THE WHEEL</p><h2>Book your test drive</h2><p>Tell us a little about yourself and we’ll help arrange your drive.</p></div>
+      <div class="booking-layout">
+        <aside class="steps-card"><div class="step active"><span>1</span><div><strong>Your drive</strong><small>Model & location</small></div></div><div class="step"><span>2</span><div><strong>Your details</strong><small>How to reach you</small></div></div><div class="step"><span>3</span><div><strong>Confirmation</strong><small>You're all set</small></div></div><div class="help-card"><span class="help-icon">✦</span><strong>Need a hand?</strong><p>Our experience team can help you find the right model and time.</p><a href="mailto:hello@example.invalid">Contact the team ↗</a></div></aside>
+        <form id="testDriveForm" class="form-card" novalidate>
+          <div class="form-heading"><div><p class="form-kicker">STEP 01 — BOOKING DETAILS</p><h3>Plan your drive</h3></div><span class="required-note"><span>*</span> Required fields</span></div>
+          <div class="field-grid">
+            <div class="field full"><label for="model">Choose a model <span>*</span></label><select id="model" name="model" required><option value="">Select a model</option><option>Pulse E</option><option>Terra X</option><option>Vista Hybrid</option><option>Nova Sport</option></select><small class="error" id="modelError"></small></div>
+            <div class="field"><label for="firstName">First name <span>*</span></label><input id="firstName" name="firstName" autocomplete="given-name" placeholder="e.g. Aanya" required /><small class="error" id="firstNameError"></small></div>
+            <div class="field"><label for="lastName">Last name <span>*</span></label><input id="lastName" name="lastName" autocomplete="family-name" placeholder="e.g. Sharma" required /><small class="error" id="lastNameError"></small></div>
+            <div class="field"><label for="email">Email address <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required /><small class="error" id="emailError"></small></div>
+            <div class="field"><label for="phone">Mobile number <span>*</span></label><div class="phone-wrap"><span id="dialCode">+91</span><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="98765 43210" required /></div><small class="field-hint" id="phoneHint">10 digits for India</small><small class="error" id="phoneError"></small></div>
+            <div class="field"><label for="city">City <span>*</span></label><input id="city" name="city" autocomplete="address-level2" placeholder="Your city" required /><small class="error" id="cityError"></small></div>
+            <div class="field"><label for="dealer">Preferred experience centre <span>*</span></label><select id="dealer" name="dealer" required><option value="">Choose a centre</option><option value="central">Central Experience Centre</option><option value="north">Northside Auto Studio</option><option value="coastal">Coastal Drive Hub</option></select><small class="error" id="dealerError"></small></div>
+            <div class="field"><label for="date">Preferred date <span>*</span></label><input id="date" name="date" type="date" required /><small class="error" id="dateError"></small></div>
+            <div class="field"><label for="time">Preferred time <span>*</span></label><select id="time" name="time" required><option value="">Choose a time</option><option>09:00 AM</option><option>10:30 AM</option><option>12:00 PM</option><option>02:00 PM</option><option>03:30 PM</option><option>05:00 PM</option></select><small class="error" id="timeError"></small></div>
+          </div>
+          <div class="consent"><label class="checkbox-line"><input id="consent" name="consent" type="checkbox" required /><span class="custom-check"></span><span id="consentText">I agree to be contacted about this test drive request and accept the privacy notice.</span> <span>*</span></label><small class="error" id="consentError"></small></div>
+          <div class="form-footer"><p><span class="lock">♢</span> Your details are used for this demo only.</p><button class="submit-button" type="submit">Request my test drive <span aria-hidden="true">→</span></button></div>
+          <div id="formStatus" class="status" role="status" aria-live="polite" hidden></div>
+        </form>
+      </div>
+    </section>
+    <section class="bottom-strip" id="how-it-works"><div><span class="strip-icon">01</span><strong>Choose your model</strong><p>Find the one that feels right.</p></div><div><span class="strip-icon">02</span><strong>Pick a time</strong><p>Make it fit your schedule.</p></div><div><span class="strip-icon">03</span><strong>Enjoy the drive</strong><p>We'll help with the next step.</p></div></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#top"><span class="brand-mark">D</span><span>driveflow<span class="brand-dot">.</span></span></a><span>Prototype only · Fictional brand · No real lead is submitted</span><span>© 2026 DriveFlow concept</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
